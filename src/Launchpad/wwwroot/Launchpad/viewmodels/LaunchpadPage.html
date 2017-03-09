@@ -1,0 +1,18 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+<link rel="import" href="/Launchpad/elements/launchpad-panel/launchpad-panel.html" />
+
+<template>
+    <!--<style>
+         /* TODO */
+         .workspace > juicy-tile-table,
+         .workspace > juicy-composition {
+             /*flex: 1 1 auto;*/
+             padding: 32px; /*this is the desired padding - labelled as WS on Jocke's screenshot. In future this margin will be created by the outermost gap*/
+             display: block;
+         }
+    </style>-->
+
+    <template is="dom-bind">
+        <launchpad-panel apps="{{model.Applications}}" layout="{{model.Layout}}"></launchpad-panel>
+    </template>
+</template>

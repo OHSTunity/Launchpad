@@ -1,0 +1,28 @@
+{
+  "name": "juicy-tile-list",
+  "version": "1.4.0",
+  "homepage": "https://github.com/Juicy/juicy-tile-list",
+  "description": "<juicy-tile-list> is a Custom Element with sortable tiles that packs efficiently without changing HTML structure (changes CSS only).",
+  "license": "MIT",
+  "main": "src/juicy-tile-list.html",
+  "keywords": [
+    "web-components",
+    "tiles",
+    "masonry",
+    "bin-packing"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test/",
+    "examples/",
+    "bugs",
+    "Gruntfile.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "web-component-tester": ">=4.2.0",
+    "webcomponentsjs": "^0.7.20"
+  }
+}

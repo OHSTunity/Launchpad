@@ -1,0 +1,17 @@
+{
+  "name": "Launchpad",
+  "homepage": "https://github.com/StarcounterApps/Launchpad",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "**/examples",
+    "node_modules",
+    "bower_components",
+    "sys",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "juicy-tile-table": "#master"
+  }
+}
