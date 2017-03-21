@@ -1,2 +1,5 @@
-cd src\Launchpad
+@ECHO OFF
+
+PUSHD %~dp0src\Launchpad
 starpack -p
+POPD
