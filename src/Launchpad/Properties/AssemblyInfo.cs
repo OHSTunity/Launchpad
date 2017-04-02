@@ -9,9 +9,9 @@ using Starcounter.Internal;
 [assembly: AssemblyTitle("Launchpad")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("StarcounterApps")]
 [assembly: AssemblyProduct("Launchpad")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCopyright("Copyright 2017 Starcounter")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,7 +34,12 @@ using Starcounter.Internal;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0")]
+
+// Starcounter Package information
+//
+// Unique warehouse id e.g. <myorganization.myapp>
+[assembly: AssemblyMetadata("ID", "Starcounter.Launchpad")]
 
 // Assures the current assembly has a reference to the Starcounter
 // assembly. A reference to Starcounter is currently required for
