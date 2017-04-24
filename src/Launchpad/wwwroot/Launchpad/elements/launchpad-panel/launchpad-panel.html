@@ -110,7 +110,7 @@
                     if (app.name) {
                         var a = JSON.parse(JSON.stringify(app));
 
-                        a.url = a.url || a.name.toLowerCase();
+                        a.url = a.url || "/" + a.name.toLowerCase();
                         array.push(a);
                     }
                 }
