@@ -58,7 +58,7 @@ namespace Launchpad.Api
 
             Handle.GET("/launchpad/applications", () => new Json(), new HandlerOptions {SelfOnly = true});
 
-            UriMapping.Map("/launchpad/partial/launchpad", UriMapping.MappingUriPrefix + "/launchpad"); // launchpad panel; used in Launcher/Website
+            Blender.MapUri("/launchpad/partial/launchpad", "launchpad"); // launchpad panel; used in Launcher/Website
         }
     }
 }
