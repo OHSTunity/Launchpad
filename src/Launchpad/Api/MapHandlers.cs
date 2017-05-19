@@ -6,7 +6,7 @@ namespace Launchpad.Api
     {
         public void Register()
         {
-            UriMapping.Map("/launchpad/applications", UriMapping.MappingUriPrefix + "/app-name");
+            Blender.MapUri("/launchpad/applications", "app-name");
         }
     }
 }
