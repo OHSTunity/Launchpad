@@ -71,15 +71,15 @@
     <Compile Include="ViewModels\LaunchpadPage.json.cs">
       <DependentUpon>LaunchpadPage.json</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\StandalonePage.json.cs">
-      <DependentUpon>StandalonePage.json</DependentUpon>
+    <Compile Include="ViewModels\MasterPage.json.cs">
+      <DependentUpon>MasterPage.json</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="wwwroot\Launchpad\viewmodels\StandalonePage.html" />
+    <None Include="wwwroot\Launchpad\viewmodels\MasterPage.html" />
     <None Include=".bowerrc" />
     <None Include="bower.json" />
-    <TypedJSON Include="ViewModels\StandalonePage.json">
+    <TypedJSON Include="ViewModels\MasterPage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
     <TypedJSON Include="ViewModels\LaunchpadPage.json">

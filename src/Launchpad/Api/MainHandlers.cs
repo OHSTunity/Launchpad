@@ -10,27 +10,10 @@ namespace Launchpad.Api
             Application.Current.Use(new HtmlFromJsonProvider());
             Application.Current.Use(new PartialToStandaloneHtmlProvider());
 
-            Handle.GET("/launchpad/standalone", () =>
-            {
-                if (Session.Current != null && Session.Current.Data is StandalonePage)
-                {
-                    return Session.Current.Data;
-                }
-
-                if (Session.Current == null)
-                {
-                    Session.Current = new Session(SessionOptions.PatchVersioning);
-                }
-
-                return new StandalonePage
-                {
-                    Session = Session.Current
-                };
-            }, new HandlerOptions {SelfOnly = true});
-
             Handle.GET("/launchpad", () =>
             {
-                var master = (StandalonePage)Self.GET("/launchpad/standalone");
+                var master = this.GetMasterPageFromSession();
+
                 if (!(master.CurrentPage is LaunchpadPage))
                 {
                     master.CurrentPage = Self.GET("/launchpad/partial/launchpad");
@@ -59,6 +42,23 @@ namespace Launchpad.Api
             Handle.GET("/launchpad/applications", () => new Json(), new HandlerOptions {SelfOnly = true});
 
             Blender.MapUri("/launchpad/partial/launchpad", "launchpad"); // launchpad panel; used in Launcher/Website
+        }
+        protected MasterPage GetMasterPageFromSession()
+        {
+            if (Session.Current == null)
+            {
+                Session.Current = new Session(SessionOptions.PatchVersioning);
+            }
+
+            MasterPage master = Session.Current.Data as MasterPage;
+
+            if (master == null)
+            {
+                master = new MasterPage();
+                Session.Current.Data = master;
+            }
+
+            return master;
         }
     }
 }
