@@ -43,6 +43,7 @@ namespace Launchpad.Api
 
             Blender.MapUri("/launchpad/partial/launchpad", "launchpad"); // launchpad panel; used in Launcher/Website
         }
+		
         protected MasterPage GetMasterPageFromSession()
         {
             if (Session.Current == null)
