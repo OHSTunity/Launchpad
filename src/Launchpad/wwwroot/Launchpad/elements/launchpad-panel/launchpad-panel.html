@@ -53,9 +53,16 @@
                 font-weight: normal;
                 line-height: 1.1;
             }
+
+            .launchpad-grid-wrapper {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(auto-fill, 6em);
+                grid-column-gap: 4em;
+            }
         </style>
 
-        <juicy-tile-table defaulttilesetup='{ "height": 98, "width": 80}' gutter="10" refreshonmutation name="/Launchpad" setup='[[cloneJSON(layout)]]'>
+        <div class="launchpad-grid-wrapper">    
             <template is="dom-repeat" items="{{appsArray}}">
                 <div class="launchpad-tile">
                     <a href="{{item.url}}">
@@ -66,7 +73,7 @@
                     </a>
                 </div>
             </template>
-        </juicy-tile-table>
+        </div>
     </template>
 
     <script>
@@ -87,16 +94,6 @@
                   value: null
                 }
             },
-            cloneJSON: function(obj){
-              if(obj && typeof obj === 'object'){
-                return JSON.parse(JSON.stringify(obj));
-              } else {
-                return JSON.parse(obj);
-              }
-            },
-            // layoutChanged: function(newVal){
-            //   newVal && this.shadowRoot.getElementByTagName('juicy-tile-table').setup = JSON.parse(JSON.stringify(newVal));
-            // },
             appsChanged: function (newVal, oldVal) {
                 var array = [];
 
