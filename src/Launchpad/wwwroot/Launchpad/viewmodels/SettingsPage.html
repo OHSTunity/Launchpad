@@ -2,5 +2,9 @@
 
 <template>
     <template is="dom-bind">
+        <h2 slot="launchpad/settings-header-title">Settings</h2>
+    </template>
+    <template is="declarative-shadow-dom">
+        <slot name="launchpad/settings-header-title"></slot>
     </template>
 </template>
