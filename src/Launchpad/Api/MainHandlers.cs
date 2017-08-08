@@ -41,8 +41,24 @@ namespace Launchpad.Api
 
             Handle.GET("/launchpad/applications", () => new Json(), new HandlerOptions {SelfOnly = true});
 
+            Handle.GET("/launchpad/settings", () => 
+            {
+                var master = this.GetMasterPageFromSession();
+
+                master.CurrentPage = Self.GET("/launchpad/partial/settings");
+
+                return master;
+            });
+
+            Handle.GET("/launchpad/partial/settings", () =>
+            {
+                return new SettingsPage();
+            });
+
             Blender.MapUri("/launchpad/partial/launchpad", "launchpad"); // launchpad panel; used in Launcher/Website
+            Blender.MapUri("/launchpad/partial/settings", "settings");
         }
+        
 		
         protected MasterPage GetMasterPageFromSession()
         {

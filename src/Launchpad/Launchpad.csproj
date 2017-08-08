@@ -74,8 +74,14 @@
     <Compile Include="ViewModels\MasterPage.json.cs">
       <DependentUpon>MasterPage.json</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\SettingsPage.json.cs">
+      <DependentUpon>SettingsPage.json</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <TypedJSON Include="ViewModels\SettingsPage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
     <None Include="wwwroot\Launchpad\viewmodels\MasterPage.html" />
     <None Include=".bowerrc" />
     <None Include="bower.json" />
@@ -85,6 +91,7 @@
     <TypedJSON Include="ViewModels\LaunchpadPage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
+    <None Include="wwwroot\Launchpad\viewmodels\SettingsPage.html" />
     <Content Include="wwwroot\Launchpad\viewmodels\LaunchpadPage.html" />
   </ItemGroup>
   <ItemGroup />
