@@ -10,9 +10,10 @@
             }
             .launchpad-grid__tile a {
                 text-align: center;
-                min-width: 80px;
+                width: 80px;
                 display: block;
                 text-align: center;
+                height: 80px;
             }
 
             .launchpad-grid__tile .launchpad-grid__tile-icon {
@@ -21,8 +22,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                min-width: 64px;
-                min-height: 64px;
+                height: 100%;
             }
 
             .launchpad-grid__tile .launchpad-grid__tile-icon img,
@@ -54,9 +54,9 @@
             }
 
             .launchpad-grid {
-                display: grid;
+                display: inline-flex;
                 width: 100%;
-                grid-template-columns: repeat(auto-fill, 6.15em);
+                flex-wrap: wrap;
             }
 
             .launchpad-grid__tile-label {
