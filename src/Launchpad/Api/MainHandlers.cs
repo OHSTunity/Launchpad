@@ -34,14 +34,12 @@ namespace Launchpad.Api
 
                 return new LaunchpadPage
                 {
-                    Applications = Self.GET<Json>("/launchpad/applications"),
+                    Applications = Self.GET<Json>("/launchpad/applications", () => new Json()),
                     Layout = layout
                 };
-            }, new HandlerOptions {SelfOnly = true});
+            }, new HandlerOptions { SelfOnly = true });
 
-            Handle.GET("/launchpad/applications", () => new Json(), new HandlerOptions {SelfOnly = true});
-
-            Handle.GET("/launchpad/settings", () => 
+            Handle.GET("/launchpad/settings", () =>
             {
                 var master = this.GetMasterPageFromSession();
 
@@ -50,16 +48,13 @@ namespace Launchpad.Api
                 return master;
             });
 
-            Handle.GET("/launchpad/partial/settings", () =>
-            {
-                return new SettingsPage();
-            });
+            Handle.GET("/launchpad/partial/settings", () => new SettingsPage());
 
             Blender.MapUri("/launchpad/partial/launchpad", "launchpad"); // launchpad panel; used in Launcher/Website
             Blender.MapUri("/launchpad/partial/settings", "settings");
         }
-        
-		
+
+
         protected MasterPage GetMasterPageFromSession()
         {
             if (Session.Current == null)
@@ -67,12 +62,12 @@ namespace Launchpad.Api
                 Session.Current = new Session(SessionOptions.PatchVersioning);
             }
 
-            MasterPage master = Session.Current.Data as MasterPage;
+            MasterPage master = Session.Ensure().Store[nameof(MasterPage)] as MasterPage;
 
             if (master == null)
             {
                 master = new MasterPage();
-                Session.Current.Data = master;
+                Session.Current.Store[nameof(MasterPage)] = master;
             }
 
             return master;
