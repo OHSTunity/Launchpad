@@ -10,25 +10,29 @@
             }
             .launchpad-grid__tile a {
                 text-align: center;
-                min-width: 80px;
+                width: 80px;
                 display: block;
                 text-align: center;
+                min-height: 80px;
+                max-height: 100px;
+
             }
 
-            .launchpad-grid__tile .launchpad-grid__tile-icon {
+            .launchpad-grid__tile {
                 padding: 8px;
                 border-radius: 8px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                min-width: 64px;
-                min-height: 64px;
+                height: 100%;
             }
 
-            .launchpad-grid__tile .launchpad-grid__tile-icon img,
-            .launchpad-grid__tile .launchpad-grid__tile-icon svg {
+            .launchpad-grid__tile .launchpad-grid__tile-icon {
                 width: 64px;
                 height: 64px;
+                margin-right: 8px;
+                margin-left: 8px;
+                margin-bottom: 8px;
             }
 
             .launchpad-grid__tile:hover .launchpad-grid__tile-icon {
@@ -53,10 +57,20 @@
                 line-height: 1.1;
             }
 
-            .launchpad-grid {
-                display: grid;
-                width: 100%;
-                grid-template-columns: repeat(auto-fill, 6.15em);
+            @supports (display: grid) {
+                .launchpad-grid {
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: repeat(auto-fill, 6.15em);
+                }
+            }
+
+            @supports not (display: grid) {
+                .launchpad-grid {
+                    display: inline-flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                }
             }
 
             .launchpad-grid__tile-label {
@@ -78,7 +92,7 @@
             <div class="launchpad-grid__tile">
                 <a href="/launchpad/settings">
                     <div class="launchpad-grid__tile-icon">
-                        <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                        <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                             <title>cog</title>
                             <desc>Created with Sketch.</desc>
                             <defs></defs>
