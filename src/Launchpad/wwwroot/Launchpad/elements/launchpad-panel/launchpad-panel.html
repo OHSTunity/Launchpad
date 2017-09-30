@@ -141,6 +141,9 @@
                         var a = JSON.parse(JSON.stringify(app));
 
                         a.url = a.url || "/" + a.name.toLowerCase();
+                        if (a.html === undefined && a.Html !== undefined) {
+                            a.html = a.Html;
+                        }
                         array.push(a);
                     }
                 }
