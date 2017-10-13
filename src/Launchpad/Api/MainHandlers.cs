@@ -34,10 +34,12 @@ namespace Launchpad.Api
 
                 return new LaunchpadPage
                 {
-                    Applications = Self.GET<Json>("/launchpad/applications", () => new Json()),
+                    Applications = Self.GET<Json>("/launchpad/applications"),
                     Layout = layout
                 };
             }, new HandlerOptions { SelfOnly = true });
+
+            Handle.GET("/launchpad/applications", () => new Json());
 
             Handle.GET("/launchpad/settings", () =>
             {
