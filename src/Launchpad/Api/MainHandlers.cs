@@ -52,8 +52,8 @@ namespace Launchpad.Api
 
             Handle.GET("/launchpad/partial/settings", () => new SettingsPage());
 
-            Blender.MapUri("/launchpad/partial/launchpad", "launchpad"); // launchpad panel; used in Launcher/Website
-            Blender.MapUri("/launchpad/partial/settings", "settings");
+            Blender.MapUri("/launchpad/partial/launchpad", string.Empty, new string[] { "launchpad" }); // launchpad panel; used in Launcher/Website
+            Blender.MapUri("/launchpad/partial/settings", string.Empty, new string[] { "settings" });
         }
 
 
