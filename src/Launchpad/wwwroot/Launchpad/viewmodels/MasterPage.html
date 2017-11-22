@@ -1,0 +1,10 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <starcounter-include slot="launchpad/current-page" partial="{{model.CurrentPage}}"></starcounter-include>
+    </template>
+    <template is="declarative-shadow-dom">
+        <slot name="launchpad/current-page"></slot>
+    </template>
+</template>

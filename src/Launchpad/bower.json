@@ -12,6 +12,5 @@
     "tests"
   ],
   "dependencies": {
-    "juicy-tile-table": "#master"
   }
 }
