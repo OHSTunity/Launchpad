@@ -47,7 +47,7 @@
       <HintPath>..\..\packages\Starcounter.Simplified.Data.Model.1.0.1\lib\net45\Simplified.Data.Model.dll</HintPath>
     </Reference>
     <Reference Include="Starcounter.Extensions, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
