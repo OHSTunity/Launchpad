@@ -57,19 +57,17 @@
                 line-height: 1.1;
             }
 
+            /* for browser which does not support grid or @supports */
+            .launchpad-grid {
+                display: inline-flex;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            /* for modern browsers */
             @supports (display: grid) {
                 .launchpad-grid {
                     display: grid;
-                    width: 100%;
                     grid-template-columns: repeat(auto-fill, 6.15em);
-                }
-            }
-
-            @supports not (display: grid) {
-                .launchpad-grid {
-                    display: inline-flex;
-                    width: 100%;
-                    flex-wrap: wrap;
                 }
             }
 
