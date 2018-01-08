@@ -11,10 +11,11 @@
              display: block;
          }
     </style>-->
-
-    <template is="dom-bind">
-        <launchpad-panel slot="launchpad/launchpad-panel" apps="{{model.Applications}}" layout="{{model.Layout}}"></launchpad-panel>
-    </template>
+    <dom-bind>
+        <template is="dom-bind">
+            <launchpad-panel slot="launchpad/launchpad-panel" apps="{{model.Applications}}" layout="{{model.Layout}}"></launchpad-panel>
+        </template>
+    </dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="launchpad/launchpad-panel"></slot>
     </template>
