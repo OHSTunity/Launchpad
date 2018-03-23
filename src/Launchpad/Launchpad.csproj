@@ -43,9 +43,8 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Simplified.Data.Model, Version=1.0.4.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\..\packages\Starcounter.Simplified.Data.Model.1.0.4\lib\net45\Simplified.Data.Model.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Simplified.Data.Model, Version=1.0.7.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\..\packages\Starcounter.Simplified.Data.Model.1.0.7\lib\net461\Simplified.Data.Model.dll</HintPath>
     </Reference>
     <Reference Include="Starcounter.Extensions, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <Private>True</Private>
