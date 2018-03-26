@@ -59,11 +59,6 @@ namespace Launchpad.Api
 
         protected MasterPage GetMasterPageFromSession()
         {
-            if (Session.Current == null)
-            {
-                Session.Current = new Session(Session.Flags.PatchVersioning);
-            }
-
             MasterPage master = Session.Ensure().Store[nameof(MasterPage)] as MasterPage;
 
             if (master == null)
